@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Biography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 40px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bio-wrapper {
+      max-width: 900px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      padding: 24px 24px 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 28px;
+      letter-spacing: 0.03em;
+    }
+
+    p.subtitle {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    table.bio-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .bio-table th,
+    .bio-table td {
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+
+    .bio-table th {
+      width: 32%;
+      text-align: left;
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+      background: #f0f3fa;
+      border-radius: 8px 0 0 8px;
+    }
+
+    .bio-table td {
+      background: #fafbff;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .bio-table tr + tr th,
+    .bio-table tr + tr td {
+      border-top: 6px solid #ffffff;
+    }
+
+    .section-header {
+      text-align: left;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #777;
+      padding-top: 18px;
+      padding-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px 9px;
+      border-radius: 8px;
+      border: 1px solid #d0d4e4;
+      font-size: 14px;
+      box-sizing: border-box;
+      background: #ffffff;
+      outline: none;
+      transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #a5aac0;
+      font-size: 13px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #5577ff;
+      box-shadow: 0 0 0 3px rgba(85, 119, 255, 0.16);
+      background: #ffffff;
+    }
+
+    .hint {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #edf0ff;
+      color: #4b5aff;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-left: 4px;
+    }
+
+    .small-row {
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .bio-wrapper {
+        padding: 16px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      .bio-table th,
+      .bio-table td {
+        display: block;
+        width: 100%;
+        border-radius: 10px !important;
+      }
+      .bio-table tr + tr th,
+      .bio-table tr + tr td {
+        border-top: none;
+        margin-top: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bio-wrapper">
+    <h1>My Biography</h1>
+    <p class="subtitle">Fill in your story, one box at a time ✨</p>
+
+    <!-- BASIC INFORMATION -->
+    <div class="section-header">
+      Basic Information <span class="badge">Start here</span>
+    </div>
+    <table class="bio-table">
+      <tr>
+        <th>Full Name</th>
+        <td>
+          <input type="text" placeholder="e.g. Jane Ama Doe">
+        </td>
+      </tr>
+      <tr>
+        <th>Official Date of Birth</th>
+        <td>
+          <input type="date">
+        </td>
+      </tr>
+      <tr>
+        <th>Official Place of Birth</th>
+        <td>
+          <input type="text" placeholder="City, State/Region, Country">
+        </td>
+      </tr>
+      <tr>
+        <th>Official Home Address</th>
+        <td>
+          <textarea placeholder="Street, town, region, country"></textarea>
+          <span class="hint">If you’ll share this online, keep it general (e.g. just city & country).</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Sex / Gender</th>
+        <td>
+          <select>
+            <option value="">Select...</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+            <option>Other</option>
+          </select>
+        </td>
+      </tr>
+
+      <!-- FAMILY -->
+      <tr>
+        <th colspan="2" class="section-header">
+          Parents &amp; Family
+        </th>
+      </tr>
+      <tr>
+        <th>Father's Full Name</th>
+        <td>
+          <input type="text" placeholder="Full name of father">
+        </td>
+      </tr>
+      <tr>
+        <th>Mother's Full Name</th>
+        <td>
+          <input type="text" placeholder="Full name of mother">
+        </td>
+      </tr>
+      <tr>
+        <th>Parents Type<br><span class="small-row">(Biological / Non-biological)</span></th>
+        <td>
+          <input type="text" placeholder="e.g. Both biological, adopted mother, stepfather, etc.">
+        </td>
+      </tr>
+      <tr>
+        <th>Family Name (Surname)</th>
+        <td>
+          <input type="text" placeholder="Main family name / surname">
+        </td>
+      </tr>
+      <tr>
+        <th>Family Sides</th>
+        <td>
+          <textarea placeholder="e.g. Mother’s side: Mensah family. Father’s side: Okoro family."></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Grandparents (Mother's Side)</th>
+        <td>
+          <textarea placeholder="List grandmother & grandfather names from mother’s side"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Grandparents (Father's Side)</th>
+        <td>
+          <textarea placeholder="List grandmother & grandfather names from father’s side"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Biological Brothers &amp; Sisters</th>
+        <td>
+          <textarea placeholder="List full names of biological brothers and sisters"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Family Status</th>
+        <td>
+          <textarea placeholder="e.g. Living with parents, parents separated/married, guardians, etc."></textarea>
+        </td>
+      </tr>
+
+      <!-- EDUCATION -->
+      <tr>
+        <th colspan="2" class="section-header">
+          Education
+        </th>
+      </tr>
+      <tr>
+        <th>Kindergarten School(s)</th>
+        <td>
+          <textarea placeholder="List all kindergarten schools attended"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Primary School(s)</th>
+        <td>
+          <textarea placeholder="List all primary schools attended"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Junior Secondary School(s)</th>
+        <td>
+          <textarea placeholder="List all junior secondary schools attended"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Senior Secondary School(s)</th>
+        <td>
+          <textarea placeholder="List all senior secondary schools attended"></textarea>
+        </td>
+      </tr>
+
+      <!-- PERSONAL & LANGUAGE -->
+      <tr>
+        <th colspan="2" class="section-header">
+          Personal, Languages &amp; Health
+        </th>
+      </tr>
+      <tr>
+        <th>Occupation</th>
+        <td>
+          <input type="text" placeholder="e.g. Student, Intern, Freelancer, etc.">
+        </td>
+      </tr>
+      <tr>
+        <th>Nationality</th>
+        <td>
+          <input type="text" placeholder="e.g. Ghanaian, Filipino, Nigerian">
+        </td>
+      </tr>
+      <tr>
+        <th>Official Country</th>
+        <td>
+          <input type="text" placeholder="Country of citizenship or residence">
+        </td>
+      </tr>
+      <tr>
+        <th>Official Language(s)</th>
+        <td>
+          <textarea placeholder="e.g. English (native), Swahili (fluent)"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Other Language(s)</th>
+        <td>
+          <textarea placeholder="e.g. French (basic), local languages, etc."></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>Disabilities / All Normal</th>
+        <td>
+          <textarea placeholder="Write any disabilities or health conditions you wish to mention, or 'None / all normal' if you prefer."></textarea>
+        </td>
+      </tr>
+
+      <!-- CONTACT -->
+      <tr>
+        <th colspan="2" class="section-header">
+          Contact Information
+        </th>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td>
+          <input type="tel" placeholder="+___ ___ ___ ____">
+          <span class="hint">Only share this with people and sites you trust.</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Email Address</th>
+        <td>
+          <input type="email" placeholder="name@example.com">
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
